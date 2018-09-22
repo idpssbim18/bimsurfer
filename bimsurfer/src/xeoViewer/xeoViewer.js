@@ -702,6 +702,7 @@ define([
 
                         if (selected) {
                             selectedObjects[objectId] = object;
+                            selectedObjects[objectId]['labelText'] = params.labelText ? params.labelText : '';
                         } else {
                             if (selectedObjects[objectId]) {
                                 delete selectedObjects[objectId];
@@ -738,7 +739,7 @@ define([
                  * @event selection-changed
                  * @params Array of IDs of all currently-selected objects.
                  */
-                this.fire("selection-changed", [{objects:selectedObjectList, clickPosition: params.clickPosition}]);
+                this.fire("selection-changed", [{objects:selectedObjectList, clickPosition: params.clickPosition, labelText: params.labelText, value: selectedObjects[selectedObjectList]['labelText'] }]);
             }
         };
 
@@ -1482,6 +1483,16 @@ define([
          */
         this.destroy = function() {
             scene.destroy();
+        }
+
+        /* by simba */
+        this.getModelID = function(qid) {
+            if (objects_by_guid.length != 0) {
+                var output = objects_by_guid[qid] ? objects_by_guid[qid][0]['id'] : '';
+                return output;
+            }
+
+            return '';
         }
     }
 

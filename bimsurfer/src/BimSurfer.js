@@ -409,6 +409,15 @@ define(["./Notifier", "./BimServerModel", "./PreloadQuery", "./BimServerGeometry
         this.destroy = function() {
             viewer.destroy();
         }
+
+        /* by simba */
+        this.clear = function() {
+            viewer.clear();
+        }
+
+        this.getModelID = function(qid) {
+            return viewer.getModelID(qid);
+        }
     }
 
     BimSurfer.prototype = Object.create(EventHandler.prototype);

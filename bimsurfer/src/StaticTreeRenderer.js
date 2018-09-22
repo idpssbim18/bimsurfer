@@ -3,6 +3,7 @@ define(["./EventHandler", "./Request", "./Utils"], function(EventHandler, Reques
     function StaticTreeRenderer(args) {
         
         var self = this;        
+        var lableElements = [];
         EventHandler.call(this);
         
         var TOGGLE = self.TOGGLE = 0;
@@ -108,16 +109,22 @@ define(["./EventHandler", "./Request", "./Utils"], function(EventHandler, Reques
                 
                 label.className = "label";
                 label.appendChild(document.createTextNode(n.name || n.guid));
+                label.setAttribute('val', qid);
                 d.appendChild(label);
                 children.className = "children";
                 d.appendChild(children);
                 domNodes[qid] = label;
                 
+                lableElements.push({
+                    labelText: (n.name || n.guid),
+                    id: qid
+                })
+                
                 label.onclick = function(evt) {
                     evt.stopPropagation();
                     evt.preventDefault();
                     self.setSelected([qid], evt.shiftKey ? TOGGLE : SELECT_EXCLUSIVE);
-                    self.fire("click", [qid, self.getSelected(true)]);
+                    self.fire("click", [qid, self.getSelected(true), evt.target.textContent]);
                     return false;
                 };
                 
@@ -147,6 +154,11 @@ define(["./EventHandler", "./Request", "./Utils"], function(EventHandler, Reques
                 }
                 document.getElementById(args['domNode']).appendChild(d);
             });
+        }
+
+
+        this.getLabelElements = function() {
+            return lableElements;
         }
         
     };
