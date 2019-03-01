@@ -19,6 +19,7 @@ define(["./BimServerModel", "./PreloadQuery", "./BimServerGeometryLoader", "./Bi
     		});
     	};
     	
+
     	this.loadObjects = function(apiModel, objects){
     		return new Promise(function(resolve, reject) {
     			var model = new BimServerModel(apiModel);
@@ -32,6 +33,8 @@ define(["./BimServerModel", "./PreloadQuery", "./BimServerGeometryLoader", "./Bi
     		});
     	};
     	
+
+        
     	this.loadOids = function(model, oids){
             var oidToGuid = {};
             var guidToOid = {};

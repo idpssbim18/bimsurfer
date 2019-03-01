@@ -21,6 +21,7 @@ function highlight(oid, selected, labelText='') {
 require(["data/source.js"], function(data) {
     componentNames = data;
 });
+ 
 
 require([
     "bimsurfer/src/BimSurfer",
@@ -29,6 +30,7 @@ require([
     "bimsurfer/src/Request",
     "bimsurfer/src/Utils",
     "bimsurfer/lib/domReady!",
+    // modifyied
 ],
 function (BimSurfer, StaticTreeRenderer, MetaDataRenderer, Request, Utils) {
     var bimSurfer = new BimSurfer({
@@ -59,6 +61,7 @@ function (BimSurfer, StaticTreeRenderer, MetaDataRenderer, Request, Utils) {
     bimSurfer.load({
         src: modelName + ".gltf"
     }).then(function (model) {
+        // modifyied
         
         var scene = bimSurfer.viewer.scene;
         

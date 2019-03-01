@@ -13,6 +13,7 @@ define(["../lib/text"], function(text) {
     };
     */
     
+    
     function BimServerModel(apiModel) {
     	
         this.api = apiModel.bimServerApi;

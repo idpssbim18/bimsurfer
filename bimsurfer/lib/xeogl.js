@@ -26,6 +26,7 @@
 
     var xeogl = function () {
 
+
         /**
          * Semantic version number. The value for this is set by an expression that's concatenated to
          * the end of the built binary by the xeogl build script.
@@ -43,11 +44,13 @@
                 WEBGL: false
             };
 
+
             var canvas = document.createElement("canvas");
 
             if (!canvas) {
                 return info;
             }
+ 
 
             var gl = canvas.getContext("webgl", {antialias: true}) || canvas.getContext("experimental-webgl", {antialias: true});
 
@@ -57,6 +60,7 @@
                 return info;
             }
 
+    // modifyied
             info.ANTIALIAS = gl.getContextAttributes().antialias;
 
             if (gl.getShaderPrecisionFormat) {
@@ -82,7 +86,7 @@
             info.MAX_VARYING_VECTORS = gl.getParameter(gl.MAX_VARYING_VECTORS);
 
             info.SUPPORTED_EXTENSIONS = {};
-
+// modifyied
             gl.getSupportedExtensions().forEach(function (ext) {
                 info.SUPPORTED_EXTENSIONS[ext] = true;
             });

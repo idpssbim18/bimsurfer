@@ -33,7 +33,7 @@ function loadScript(url, callback) {
                 script.onreadystatechange = null;
                 callback();
             }
-        };
+        };// modifyied
     } else { //Others
         script.onload = function () {
             callback();

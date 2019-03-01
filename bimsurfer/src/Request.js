@@ -18,6 +18,7 @@ define(function() {
         });
     }
     
+    
     return {
         'Make': make
     };

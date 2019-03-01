@@ -38,6 +38,7 @@ define(['module'], function (module) {
             } else {
                 content = "";
             }
+            // modifyied
             return content;
         },
 
@@ -143,6 +144,7 @@ define(['module'], function (module) {
                    (!uHostName || uHostName.toLowerCase() === hostname.toLowerCase()) &&
                    ((!uPort && !uHostName) || uPort === port);
         },
+// modifyied
 
         finishLoad: function (name, strip, content, onLoad) {
             content = strip ? text.strip(content) : content;
@@ -234,7 +236,7 @@ define(['module'], function (module) {
                 textWrite.asModule = function (moduleName, contents) {
                     return write.asModule(moduleName, fileName, contents);
                 };
-
+// modifyied
                 text.write(pluginName, nonStripName, textWrite, config);
             }, config);
         }

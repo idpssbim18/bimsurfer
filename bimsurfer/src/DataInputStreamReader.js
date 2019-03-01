@@ -28,6 +28,7 @@ define(["../lib/StringView"], function(StringView) {
             }
         };
 
+
         this.align8 = function() {
             // Skips to the next alignment of 4 (source should have done the same!)
             var skip = 8 - (this.pos % 8);

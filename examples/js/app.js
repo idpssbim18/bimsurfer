@@ -16,12 +16,15 @@ require(["bimsurfer/src/BimSurfer.js", "bimsurfer/src/StaticTreeRenderer.js", "b
         schema: "ifc2x3tc1" // < TODO: Deduce automatically
     }).then(function (model) {
 
+
         model.getTree().then(function (tree) {
 
             var domtree = new StaticTreeRenderer({
                 domNode: 'treeContainer'
             });
-            
+         
+
+
             domtree.addModel({name: tree.name, id:model.model.roid, tree:tree});
             domtree.build();
 

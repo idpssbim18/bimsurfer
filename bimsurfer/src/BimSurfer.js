@@ -20,8 +20,10 @@ define(["./Notifier", "./BimServerModel", "./PreloadQuery", "./BimServerGeometry
 
         var viewer = this.viewer = new xeoViewer(cfg);
 
+
         /**
          * Fired whenever this BIMSurfer's camera changes.
+        
          * @event camera-changed
          */
         viewer.on("camera-changed", function() {

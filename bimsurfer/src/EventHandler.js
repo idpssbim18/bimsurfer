@@ -19,6 +19,8 @@ define(function() {
             }
         }
         if (!found) {
+
+            // modifyied
             throw new Error("Handler not found");
         }
     };
@@ -33,6 +35,7 @@ define(function() {
         }
     };
     
+
     return EventHandler;
     
 });

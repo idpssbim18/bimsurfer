@@ -17,6 +17,7 @@ define(["./DataInputStreamReader"], function (DataInputStreamReader) {
 		o.model = model;
 		o.roid = roid;
 
+
         this.addProgressListener = function (progressListener) {
             o.progressListeners.push(progressListener);
         };

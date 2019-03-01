@@ -26,7 +26,7 @@ define(["./EventHandler", "./Request", "./Utils"], function(EventHandler, Reques
         var div = self.div = document.createElement("div");
         var nameh = document.createElement("h3");
         var table = document.createElement("table");
-        
+        // modifyied
         var tr = document.createElement("tr");
         table.appendChild(tr);
         var nameth = document.createElement("th");
